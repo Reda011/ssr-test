@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "nodemon ./server/server.js",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "npm run server && npm run client",
+    "server": "webpack --config build/webpack.server.js",
+    "client": "webpack --config build/webpack.client.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -18,7 +20,13 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "vue-router": "^3.5.3",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-cli": "^4.9.1",
+    "webpack-merge": "^5.8.0"
   },
   "eslintConfig": {
     "root": true,
