@@ -36,7 +36,7 @@ server.get('/', (req, res) => {
   })
 }) */
 
-// step3 使用模板文件
+// step2 使用模板文件
 /* const server = require('express')();
 // vue-server-renderer 相关使用文档 见：https://ssr.vuejs.org/api/
 const template = require('fs').readFileSync('./template/index.template.html', 'utf-8')
@@ -70,7 +70,7 @@ server.get('/', (req, res) => {
 }) */
 
 
-// step 4 服务端渲染
+// step3 服务端渲染
 const path = require('path');
 const expess = require('express');
 const server = expess();

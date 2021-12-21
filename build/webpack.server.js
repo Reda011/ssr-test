@@ -8,6 +8,7 @@ const merge = require('webpack-merge').merge;
 const base = require('./webpack.base');
 
 module.exports = merge(base, {
+  target: 'node',
   entry: './src/entry-server.js',
   output: {
     filename: 'bundle.server.js',
