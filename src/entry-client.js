@@ -10,9 +10,9 @@ import {createVue} from './main';
 
 const app = createVue();
 const router = app.$router;
-// const store = app.$store
+/* const store = app.$store
 
-/* if (window.__INITIAL_STATE__) {   //如果window.__INITIAL_STATE__有内容，就存到app.$store中
+if (window.__INITIAL_STATE__) {   //如果window.__INITIAL_STATE__有内容，就存到app.$store中
   store.replaceState(window.__INITIAL_STATE__)
 } */
 

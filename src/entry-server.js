@@ -9,7 +9,7 @@ export function createApp(context) {
   return new Promise((resolve, reject) => {
     const app = createVue();
     const router = app.$router;
-    // const store = app.$store;
+    const store = app.$store;
 
     const { url } = context    //context包含服务端需要传递给Vue实例的一些数据，比如这里的路由
     const { fullPath } = router.resolve(url).route;
@@ -33,18 +33,18 @@ export function createApp(context) {
       }
       
       Promise.all(matchedComponents.map(Component => {
-        /* if (Component.asyncData) {
+        if (Component.asyncData) {
           //如果组件暴露出 asyncData，就调用这个方法
           //在本例中，就会去请求豆瓣数据，并把数据更新到app.$store.state
           return Component.asyncData({  
             store,
             route: router.currentRoute
           })
-        } */
+        }
       })).then(() => {
         // console.log(store.state);
 
-        // context.state = store.state  //将app.$store.state赋值给渲染上下文context.state，后面同步数据到客户端的时候会用到。
+        context.state = store.state  //将app.$store.state赋值给渲染上下文context.state，后面同步数据到客户端的时候会用到。
 
         // Promise 应该 resolve 应用程序实例，以便它可以渲染
         resolve(app)

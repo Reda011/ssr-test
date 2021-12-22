@@ -3,7 +3,6 @@ import axios from 'axios'
 const searchSubjects = 'https://movie.douban.com/j/search_subjects'
 
 export function top20 () {
-    console.log('发出请求');
   return axios.get(searchSubjects, {
     params: {
       type: 'movie',

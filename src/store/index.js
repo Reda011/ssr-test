@@ -17,7 +17,6 @@ export function createStore () {
     actions: {
       getTopList (store) {
         return top20().then((res) => {
-            console.log({res});
           store.commit('setTopList', res.data.subjects)
         })
       }
